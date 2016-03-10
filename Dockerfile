@@ -1,6 +1,6 @@
 FROM anapsix/alpine-java:jre8
 
-apk upgrade --update && \
+RUN apk upgrade --update && \
     apk add --update tzdata && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     echo "Asia/Shanghai" > /etc/timezone&&\
