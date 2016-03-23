@@ -1,8 +1,7 @@
-FROM anapsix/alpine-java:jre8
+FROM node:4-slim
 
 RUN apk upgrade --update && \
-    apk add --update tzdata && \
+    apt-get install -y imagemagick  && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime &&\
     echo "Asia/Shanghai" > /etc/timezone&&\
-    date &&\
-    rm -fr /tmp/* /var/cache/apk/*
+    date
